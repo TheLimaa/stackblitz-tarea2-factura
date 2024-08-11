@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facturación</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <center><img src="/src/res.png" alt="" /></center>
+      <h1>Resturante Mi Antojo</h1>
+    </header>
+    <main>
+      <form id="invoice-form">
+        <section class="invoice-details">
+          <h2>Detalles de la Factura</h2>
+          <label for="invoice-number">Número de Factura:</label>
+          <input
+            type="text"
+            id="invoice-number"
+            name="invoice-number"
+            required
+          />
+
+          <label for="date">Fecha:</label>
+          <input type="date" id="date" name="date" required />
+
+          <label for="customer-name">Nombre del Cliente:</label>
+          <input type="text" id="customer-name" name="customer-name" required />
+
+          <label for="customer-address">Dirección del Cliente:</label>
+          <input
+            type="text"
+            id="customer-address"
+            name="customer-address"
+            required
+          />
+        </section>
+
+        <section class="items">
+          <h2>Artículos</h2>
+          <div id="items-container">
+            <div class="item">
+              <label for="item-description">Descripción:</label>
+              <input
+                type="text"
+                class="item-description"
+                name="item-description[]"
+                required
+              />
+
+              <label for="item-quantity">Cantidad:</label>
+              <input
+                type="number"
+                class="item-quantity"
+                name="item-quantity[]"
+                required
+              />
+
+              <label for="item-price">Precio Unitario:</label>
+              <input
+                type="number"
+                class="item-price"
+                name="item-price[]"
+                required
+              />
+            </div>
+          </div>
+          <button type="button" id="add-item">Agregar Artículo</button>
+        </section>
+
+        <section class="summary">
+          <h2>Resumen</h2>
+          <label for="subtotal">Subtotal:</label>
+          <input type="text" id="subtotal" name="subtotal" readonly />
+
+          <label for="tax">IVA (12%):</label>
+          <input type="text" id="tax" name="tax" readonly />
+
+          <label for="total">Total:</label>
+          <input type="text" id="total" name="total" readonly />
+        </section>
+
+        <button type="submit">Generar Factura</button>
+      </form>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
